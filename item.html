@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Management</title>
+</head>
+<body>
+    <h1>Item Management</h1>
+
+   
+    <h2>Add Item</h2>
+    <form action="item.php" method="post">
+        <label>Item Code:</label>
+        <input type="text" name="item_code" required><br>
+        <label>Item Name:</label>
+        <input type="text" name="item_name" required><br>
+        <label>Item Category:</label>
+        <select name="item_category" required>
+            <option value="1">Printers</option>
+            <option value="2">Laptops</option>
+            <option value="3">Gadgets</option>
+            <option value="4">Ink bottles</option>
+            <option value="5">Cartridges</option>
+        </select><br>
+        <label>Item Subcategory:</label>
+        <select name="item_subcategory" required>
+            <option value="1">HP</option>
+            <option value="2">Dell</option>
+            <option value="3">Lenovo</option>
+            <option value="4">Acer</option>
+            <option value="5">Samsung</option>
+        </select><br>
+        <label>Quantity:</label>
+        <input type="text" name="quantity" required><br>
+        <label>Unit Price:</label>
+        <input type="text" name="unit_price" required><br>
+        <button type="submit" name="add_item">Add Item</button>
+    </form>
+
+
+    <h2>List of Items</h2>
+    <table border="1">
+        <tr>
+            <th>Item Code</th>
+            <th>Item Name</th>
+            <th>Item Category</th>
+            <th>Item Subcategory</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Action</th>
+        </tr>
+        <?php
+       
+        require_once 'item.php';
+
+     
+        $items = getItems();
+
+        
+        foreach ($items as $item) {
+            echo "<tr>";
+            echo "<td>".$item['item_code']."</td>";
+            echo "<td>".$item['item_name']."</td>";
+            echo "<td>".$item['item_category']."</td>";
+            echo "<td>".$item['item_subcategory']."</td>";
+            echo "<td>".$item['quantity']."</td>";
+            echo "<td>".$item['unit_price']."</td>";
+            echo "<td>
+                      <form action='item.php' method='post'>
+                          <input type='hidden' name='item_id' value='".$item['id']."'>
+                          <button type='submit' name='delete_item'>Delete</button>
+                      </form>
+                  </td>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
+</body>
+</html>

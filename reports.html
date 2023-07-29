@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reports</title>
+  </head>
+  <body>
+    <h1>Reports</h1>
+
+    <h2>Invoice Report</h2>
+    <form action="reports.php" method="post">
+      <label>Start Date:</label>
+      <input type="date" name="start_date" required /><br />
+      <label>End Date:</label>
+      <input type="date" name="end_date" required /><br />
+      <button type="submit" name="invoice_report">Generate Report</button>
+    </form>
+
+    <h2>Invoice Item Report</h2>
+    <form action="reports.php" method="post">
+      <label>Start Date:</label>
+      <input type="date" name="start_date" required /><br />
+      <label>End Date:</label>
+      <input type="date" name="end_date" required /><br />
+      <button type="submit" name="invoice_item_report">Generate Report</button>
+    </form>
+
+    <h2>Item Report</h2>
+    <form action="reports.php" method="post">
+      <button type="submit" name="item_report">Generate Report</button>
+    </form>
+  </body>
+</html>
