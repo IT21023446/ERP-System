@@ -1,4 +1,4 @@
-Assumptions
+***Assumptions
 -This ERP system was designed as a prototype for demonstration purposes and may not include all the features and security measures required for a production-ready application.
 -PHP scripts provided in the project are simplified for illustrative purposes and may lack validation and error handling. In a real world scenario it is advisable to implement strong input validation and error handling.
 -The project assumes that the PHP and MySQL servers are installed and configured on the local environment.
@@ -14,3 +14,4 @@ How to Set Up the Project in a Local Environment
 5.Create CSS Styling and Javascript
 6.Access the Application
 7.Perform CRUD Operations
+***
